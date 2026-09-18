@@ -27,7 +27,7 @@
  * false, and the sign-in gate says so) — there's no local-only fallback mode anymore.
  */
 const SUPABASE_CONFIG = {
-  url: "https://ieiamgyuhstmjajpcuxj.supabase.co",
+  url: "https://vktjnipdgsdvaqnhsoja.supabase.co",
   anonKey:
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImllaWFtZ3l1aHN0bWphanBjdXhqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk0MTUzNjcsImV4cCI6MjEwNDk5MTM2N30.Mz_1SpBj5MCJJalfQjonqps3Eh39WdNv-xfNslxaudw",
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZrdGpuaXBkZ3NkdmFxbmhzb2phIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk3NTIxMjAsImV4cCI6MjEwNTMyODEyMH0.I7oS5t0N7pC9r0VItVr6cvdJIUoPiOF6iTvKizYks8w",
 };
