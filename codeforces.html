@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Codeforces · ICPC Prep Hub</title>
+  <meta name="description" content="Sync your Codeforces solves and compare your tag mix against real sampled players, plus accuracy per tag, Codeforces Rating trajectory, solve activity, and next-problem recommendations." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>\u{1F3C6}</text></svg>" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header id="site-nav" class="topbar"></header>
+
+  <main class="container">
+    <div id="auth-gate" hidden></div>
+
+    <div id="page-body" hidden>
+    <section class="card" id="cf-locked-card" hidden>
+      <h2>Sync is locked</h2>
+      <p class="card-subtitle">
+        Verify your Codeforces handle on the <a href="dashboard.html">Dashboard</a> to sync and
+        view your own solve stats here &mdash; unverified, a handle can no longer be synced at all
+        (this stops a browsed-but-unproven handle's data from ever mixing with your real one after
+        you verify). To look up any public handle without claiming it as yours, use
+        <strong>Comparison</strong> in Codeforces Analysis below.
+      </p>
+    </section>
+
+    <section class="card" id="sync-card">
+      <h2>Points &amp; Codeforces Sync</h2>
+      <p id="cf-verify-status-badge" class="card-subtitle"></p>
+
+      <div class="sync-actions">
+        <button id="sync-now-btn" type="button" class="btn-primary">Sync now (live fetch)</button>
+        <span id="sync-status" class="sync-status"></span>
+      </div>
+
+      <details id="manual-sync-details">
+        <summary>Manual sync fallback (if the live fetch fails)</summary>
+        <p>
+          If the direct fetch is blocked (network issue, rate limit, browser extension, etc.), open your
+          submissions JSON in a new tab, copy all of it, and paste it below.
+        </p>
+        <p><a id="manual-api-link" href="#" target="_blank" rel="noopener noreferrer">Open Codeforces API URL &rarr;</a></p>
+        <textarea id="manual-json-input" rows="6" placeholder="Paste the JSON response here"></textarea>
+        <button id="manual-sync-btn" type="button" class="btn-secondary">Parse &amp; sync pasted JSON</button>
+        <p class="card-subtitle">Note: Codeforces Rating trajectory needs a live sync (a separate Codeforces endpoint) &mdash; the manual paste above covers solves, accuracy, and the unsolved list only.</p>
+      </details>
+
+      <details id="manual-log-details">
+        <summary>Log a single solve manually</summary>
+        <form id="manual-log-form" class="form-grid">
+          <label>Contest ID <input type="text" id="log-contest-id" placeholder="e.g. 1500" /></label>
+          <label>Problem index <input type="text" id="log-index" placeholder="e.g. A" /></label>
+          <label>Name <input type="text" id="log-name" placeholder="Problem name" /></label>
+          <label>Rating <input type="number" id="log-rating" placeholder="e.g. 1600" step="100" min="0" /></label>
+          <label>Tags (comma-separated) <input type="text" id="log-tags" placeholder="e.g. dp, graphs" /></label>
+          <label>Solved date <input type="date" id="log-date" /></label>
+          <div class="form-actions">
+            <button type="submit" class="btn-secondary">Log solve</button>
+          </div>
+        </form>
+      </details>
+
+      <h3>Recent solves</h3>
+      <div id="solved-log-root" class="solved-log"></div>
+    </section>
+
+    <section class="card" id="reports-card">
+      <h2>Reports</h2>
+      <div id="reports-root"></div>
+    </section>
+
+    <section class="card" id="cf-analysis-card">
+      <h2>Codeforces Analysis</h2>
+      <div id="cf-analysis-root"></div>
+    </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      icpc-prep-hub is open source under the MIT License. Contributions welcome &mdash; see
+      <a href="README.md">README.md</a> and <a href="TODO.md">TODO.md</a> for planned features.
+    </p>
+  </footer>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script defer src="js/config.js"></script>
+  <script defer src="js/supabase-client.js"></script>
+  <script defer src="js/storage.js"></script>
+  <script defer src="js/dom-utils.js"></script>
+  <script defer src="js/theme.js"></script>
+  <script defer src="js/auth.js"></script>
+  <script defer src="js/auth-ui.js"></script>
+  <script defer src="js/nav.js"></script>
+  <script defer src="js/shell.js"></script>
+  <script defer src="js/gamification.js"></script>
+  <script defer src="js/cf-sync.js"></script>
+  <script defer src="js/cf-recommend.js"></script>
+  <script defer src="js/reports.js"></script>
+  <script defer src="js/solved-log-ui.js"></script>
+  <script defer src="js/cf-baseline.js"></script>
+  <script defer src="js/cf-analysis.js"></script>
+  <script defer src="js/pages/codeforces.js"></script>
+</body>
+</html>

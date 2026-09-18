@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Self-rule · ICPC Prep Hub</title>
+  <meta name="description" content="Points, streaks, a rewards catalog, and a breakdown of what you've earned and spent &mdash; turn your own prep discipline into a game." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>\u{1F3C6}</text></svg>" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header id="site-nav" class="topbar"></header>
+
+  <main class="container">
+    <div id="auth-gate" hidden></div>
+
+    <div id="page-body" hidden>
+    <div class="page-header">
+      <h2>Self-rule</h2>
+      <p class="card-subtitle">
+        Turn your own prep discipline into a game: earn points for problems you solve, build a
+        daily streak, and spend what you earn on rewards you define for yourself &mdash; nobody's
+        handing these out but you, hence "self-rule."
+      </p>
+    </div>
+
+    <section class="card" id="points-locked-card" hidden>
+      <h2>Points are locked</h2>
+      <p class="card-subtitle">
+        Verify your Codeforces handle on the <a href="dashboard.html">Dashboard</a> to start
+        earning and spending points. Your accumulation start date is set automatically the
+        moment verification succeeds, and stays locked from then on &mdash; not something you
+        (or anyone) can backdate to cash in on old solves.
+      </p>
+    </section>
+
+    <section class="card" id="points-overview-card">
+      <h2>Your points</h2>
+      <div id="streak-root"></div>
+      <div id="points-overview-root"></div>
+    </section>
+
+    <section class="card" id="points-activity-card">
+      <h2>Points activity</h2>
+      <div id="points-activity-root"></div>
+    </section>
+
+    <section class="card" id="formula-card">
+      <h2>How points work</h2>
+      <div class="report-windows">
+        <div class="stat-tile"><div class="stat-value">3</div><div class="stat-label">points for an 800-rated solve (CF's lowest tier)</div></div>
+        <div class="stat-tile"><div class="stat-value">&divide;100 &minus;5</div><div class="stat-label">rated problem: round(rating / 100) &minus; 5</div></div>
+        <div class="stat-tile"><div class="stat-value">5</div><div class="stat-label">flat points for unrated problems</div></div>
+        <div class="stat-tile"><div class="stat-value">&times;1.5</div><div class="stat-label">bonus for your focus tag</div></div>
+        <div class="stat-tile"><div class="stat-value">+15</div><div class="stat-label">max streak bonus, first solve of the day</div></div>
+      </div>
+      <p class="card-subtitle">
+        Focus tag: <strong id="formula-focus-tags">&mdash;</strong> (change it on the
+        <a href="dashboard.html">Dashboard</a>). Gamification start date:
+        <strong id="formula-start-date">not started &mdash; verify your handle to begin</strong>
+        &mdash; set automatically the moment your Codeforces handle is verified, and not
+        user-editable, so there's no way to backdate it for a windfall; solves from that date
+        onward earn points, anything before it (or before verification at all) is logged for
+        stats on the <a href="codeforces.html">Codeforces page</a> but scores 0. The first
+        points-earning solve each day also adds a streak bonus equal to your current streak
+        length (capped at 10) &mdash; the longer your streak going in, the bigger the bonus for
+        keeping it alive.
+      </p>
+    </section>
+
+    <section class="card" id="rewards-card">
+      <h2>Rewards</h2>
+      <div id="rewards-list" class="rewards-list"></div>
+
+      <div class="card-grid">
+        <details class="sub-panel">
+          <summary>Add a reward</summary>
+          <form id="add-reward-form" class="form-grid">
+            <label>Name <input type="text" id="reward-name-input" placeholder="e.g. Movie night" /></label>
+            <label>Cost (points) <input type="number" id="reward-cost-input" min="1" step="1" /></label>
+            <div class="form-actions">
+              <button type="submit" class="btn-secondary">Add reward</button>
+            </div>
+          </form>
+        </details>
+
+        <details class="sub-panel">
+          <summary>Redemption history</summary>
+          <div id="redemption-history" class="redemption-history"></div>
+        </details>
+      </div>
+    </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      icpc-prep-hub is open source under the MIT License. Contributions welcome &mdash; see
+      <a href="README.md">README.md</a> and <a href="TODO.md">TODO.md</a> for planned features.
+    </p>
+  </footer>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script defer src="js/config.js"></script>
+  <script defer src="js/supabase-client.js"></script>
+  <script defer src="js/storage.js"></script>
+  <script defer src="js/dom-utils.js"></script>
+  <script defer src="js/theme.js"></script>
+  <script defer src="js/auth.js"></script>
+  <script defer src="js/auth-ui.js"></script>
+  <script defer src="js/nav.js"></script>
+  <script defer src="js/shell.js"></script>
+  <script defer src="js/gamification.js"></script>
+  <script defer src="js/rewards-ui.js"></script>
+  <script defer src="js/pages/self-rule.js"></script>
+</body>
+</html>

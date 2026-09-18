@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ICPC Prep Hub</title>
+  <meta name="description" content="A free companion for ICPC prep: a 99-topic roadmap, a smart timeline, Codeforces-powered gamification with streaks and analysis against real players, and progress reports. Sign in free to track your progress across every device." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>\u{1F3C6}</text></svg>" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header id="site-nav" class="topbar"></header>
+
+  <main class="container">
+    <div class="hero">
+      <h1>ICPC Prep Hub</h1>
+      <p class="intro">
+        An open-source companion for ICPC prep &mdash; regionals through World Finals. Sign in with
+        just an email (no password) and verify your Codeforces handle once &mdash; your progress
+        follows you to every device from then on.
+      </p>
+    </div>
+
+    <section class="card" id="home-progress-card">
+      <h2>Your progress</h2>
+      <div id="home-progress-root"></div>
+    </section>
+
+    <nav class="page-links" aria-label="Sections">
+      <a class="page-link-card" href="dashboard.html">
+        <div class="page-link-title">Dashboard</div>
+        <div class="page-link-desc">Profile, Codeforces verification, timeline pacing, your streak, and a roadmap progress summary</div>
+      </a>
+      <a class="page-link-card" href="codeforces.html">
+        <div class="page-link-title">Codeforces</div>
+        <div class="page-link-desc">Sync solves and compare your tag mix against real sampled Codeforces players, plus accuracy, Codeforces Rating trajectory, and recommendations</div>
+      </a>
+      <a class="page-link-card" href="roadmap.html">
+        <div class="page-link-title">Roadmap</div>
+        <div class="page-link-desc">99 topics across 8 subjects, from foundations to World-Finals-level techniques</div>
+      </a>
+      <a class="page-link-card" href="self-rule.html">
+        <div class="page-link-title">Self-rule</div>
+        <div class="page-link-desc">Points, streaks, rewards, and a breakdown of what you've earned and spent</div>
+      </a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      icpc-prep-hub is open source under the MIT License. Contributions welcome &mdash; see
+      <a href="README.md">README.md</a> and <a href="TODO.md">TODO.md</a> for planned features.
+    </p>
+  </footer>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script defer src="js/config.js"></script>
+  <script defer src="js/supabase-client.js"></script>
+  <script defer src="js/storage.js"></script>
+  <script defer src="js/dom-utils.js"></script>
+  <script defer src="js/theme.js"></script>
+  <script defer src="js/auth.js"></script>
+  <script defer src="js/auth-ui.js"></script>
+  <script defer src="js/nav.js"></script>
+  <script defer src="js/shell.js"></script>
+  <script defer src="js/gamification.js"></script>
+  <script defer src="js/roadmap-data.js"></script>
+  <script defer src="js/roadmap-problems-data.js"></script>
+  <script defer src="js/roadmap.js"></script>
+  <script defer src="js/pages/home.js"></script>
+</body>
+</html>

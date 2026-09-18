@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team · ICPC Prep Hub</title>
+  <meta name="description" content="Paste your handle plus two teammates' and get a comparative analysis: strengths, weak tags, suggested roles, and non-topic signals like accuracy and live-contest solve speed." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>\u{1F3C6}</text></svg>" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header id="site-nav" class="topbar"></header>
+
+  <main class="container">
+    <div class="page-header">
+      <h2>ICPC Team Analyzer</h2>
+      <p class="card-subtitle">
+        Paste your Codeforces handle plus two teammates' &mdash; a real ICPC team is exactly 3
+        people. Nothing here is synced or stored; each handle's public data is fetched fresh,
+        the same way the Codeforces page's "Compare with someone" tier works.
+      </p>
+    </div>
+
+    <section class="card" id="team-setup-card">
+      <h2>Your team</h2>
+      <form id="team-analyze-form" class="form-grid">
+        <label>You <input type="text" id="team-handle-1" placeholder="e.g. tourist" /></label>
+        <label>Teammate 2 <input type="text" id="team-handle-2" placeholder="Codeforces handle" /></label>
+        <label>Teammate 3 <input type="text" id="team-handle-3" placeholder="Codeforces handle" /></label>
+        <div class="form-actions">
+          <button type="submit" id="team-analyze-btn" class="btn-primary">Analyze team</button>
+        </div>
+      </form>
+      <span id="team-status" class="sync-status"></span>
+    </section>
+
+    <div id="team-results-root"></div>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      icpc-prep-hub is open source under the MIT License. Contributions welcome &mdash; see
+      <a href="README.md">README.md</a> and <a href="TODO.md">TODO.md</a> for planned features.
+    </p>
+  </footer>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script defer src="js/config.js"></script>
+  <script defer src="js/supabase-client.js"></script>
+  <script defer src="js/storage.js"></script>
+  <script defer src="js/dom-utils.js"></script>
+  <script defer src="js/theme.js"></script>
+  <script defer src="js/auth.js"></script>
+  <script defer src="js/auth-ui.js"></script>
+  <script defer src="js/nav.js"></script>
+  <script defer src="js/shell.js"></script>
+  <script defer src="js/gamification.js"></script>
+  <script defer src="js/cf-sync.js"></script>
+  <script defer src="js/cf-baseline.js"></script>
+  <script defer src="js/cf-team-analysis.js"></script>
+  <script defer src="js/pages/team.js"></script>
+</body>
+</html>

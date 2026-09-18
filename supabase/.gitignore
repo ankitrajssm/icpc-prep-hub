@@ -1,0 +1,11 @@
+# Supabase
+.branches
+.temp
+
+# Local secrets (Edge Function env vars, service-role keys, etc.) — never commit these.
+# The anon/public key in ../js/config.js is NOT a secret and is fine to commit; this is
+# for things like service_role keys or third-party API secrets used *inside* functions.
+.env
+.env.keys
+.env.local
+.env.*.local

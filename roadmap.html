@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roadmap · ICPC Prep Hub</title>
+  <meta name="description" content="A 99-topic, 8-subject, phased ICPC checklist, with why-it-matters notes and real reference links for every topic." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>\u{1F3C6}</text></svg>" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header id="site-nav" class="topbar"></header>
+
+  <main class="container">
+    <div id="auth-gate" hidden></div>
+
+    <div id="page-body" hidden>
+    <div class="page-header">
+      <h2>Roadmap</h2>
+      <p class="card-subtitle">
+        99 topics across 8 subjects, each phased Foundations &rarr; Core &rarr; Advanced so the
+        difficulty ramps up gradually instead of jumping straight to World-Finals-level material.
+        Pick a subject on the left &mdash; each topic explains what the technique is and why it
+        matters for ICPC, with a link to a real reference to learn it from and a set of curated
+        Codeforces practice problems. A topic auto-completes once you've solved every one of its
+        practice problems; the handful of Contest Meta-Skills topics (process and mindset, not
+        code) are the one exception and still get checked off by hand.
+      </p>
+    </div>
+    <section class="card" id="roadmap-locked-card" hidden>
+      <h2>Roadmap is locked</h2>
+      <p class="card-subtitle">
+        Verify your Codeforces handle on the <a href="dashboard.html">Dashboard</a> to track your
+        roadmap progress here.
+      </p>
+    </section>
+
+    <div id="roadmap-root"></div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      icpc-prep-hub is open source under the MIT License. Contributions welcome &mdash; see
+      <a href="README.md">README.md</a> and <a href="TODO.md">TODO.md</a> for planned features.
+    </p>
+  </footer>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script defer src="js/config.js"></script>
+  <script defer src="js/supabase-client.js"></script>
+  <script defer src="js/storage.js"></script>
+  <script defer src="js/dom-utils.js"></script>
+  <script defer src="js/theme.js"></script>
+  <script defer src="js/auth.js"></script>
+  <script defer src="js/auth-ui.js"></script>
+  <script defer src="js/nav.js"></script>
+  <script defer src="js/shell.js"></script>
+  <script defer src="js/gamification.js"></script>
+  <script defer src="js/roadmap-data.js"></script>
+  <script defer src="js/roadmap-problems-data.js"></script>
+  <script defer src="js/roadmap.js"></script>
+  <script defer src="js/pages/roadmap.js"></script>
+</body>
+</html>
